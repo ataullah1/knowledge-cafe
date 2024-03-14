@@ -2,9 +2,14 @@ import './App.css';
 import Header from './component/Header';
 import Blogs from './component/Blogs';
 import Bookmarks from './component/Bookmarks';
+import { useState } from 'react';
 
 function App() {
-  // console.log(blog);
+  const [bookmark, setBookmark] = useState([]);
+
+  const handleBookmark = (dta) => {
+    console.log(dta);
+  };
 
   return (
     <>
@@ -12,7 +17,7 @@ function App() {
         <Header />
         <main className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 ">
           {/* left part Blog  */}
-          <Blogs />
+          <Blogs handleBookmark={handleBookmark} />
           {/* right part  Bookmark */}
           <Bookmarks />
         </main>

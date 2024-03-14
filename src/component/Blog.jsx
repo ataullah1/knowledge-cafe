@@ -1,7 +1,7 @@
 import { FaRegBookmark } from 'react-icons/fa';
-const Blog = ({ blog }) => {
+import PropTypes from 'prop-types';
+const Blog = ({ blog, handleBookmark }) => {
   const {
-    id,
     cover,
     title,
     author_img,
@@ -11,6 +11,7 @@ const Blog = ({ blog }) => {
     hashtags,
   } = blog;
   //   console.log(id, cover);
+
   return (
     <div className="pb-5 md:pb-9 mb-5 md:mb-10 border-b">
       <div className="mb-7">
@@ -33,7 +34,10 @@ const Blog = ({ blog }) => {
             {reading_time} min read
           </p>
 
-          <FaRegBookmark className="cursor-pointer" />
+          <FaRegBookmark
+            onClick={() => handleBookmark(title)}
+            className="cursor-pointer"
+          />
         </div>
       </div>
       <div>
@@ -59,7 +63,8 @@ const Blog = ({ blog }) => {
   );
 };
 
-// Blog.propTypes = {
-//   blog: PropTypes.object.isRequired,
-// };
+Blog.propTypes = {
+  blog: PropTypes.object.isRequired,
+  handleBookmark: PropTypes.func,
+};
 export default Blog;
