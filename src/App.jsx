@@ -1,18 +1,9 @@
-import { useState } from 'react';
 import './App.css';
 import Header from './component/Header';
-import { useEffect } from 'react';
 import Blogs from './component/Blogs';
 import Bookmarks from './component/Bookmarks';
 
 function App() {
-  const [blog, setBlog] = useState([]);
-  useEffect(() => {
-    fetch('blogs.json')
-      .then((res) => res.json())
-      .then((dta) => setBlog(dta));
-  }, []);
-
   // console.log(blog);
 
   return (
