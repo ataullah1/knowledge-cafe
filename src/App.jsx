@@ -8,9 +8,9 @@ function App() {
   const [bookmark, setBookmark] = useState([]);
 
   const handleBookmark = (dta) => {
-    console.log(dta);
+    setBookmark([...bookmark, dta]);
   };
-
+  // console.log(bookmark);
   return (
     <>
       <div className="fontFam w-11/12 mx-auto">
@@ -19,7 +19,7 @@ function App() {
           {/* left part Blog  */}
           <Blogs handleBookmark={handleBookmark} />
           {/* right part  Bookmark */}
-          <Bookmarks />
+          <Bookmarks bookmark={bookmark} />
         </main>
       </div>
     </>
