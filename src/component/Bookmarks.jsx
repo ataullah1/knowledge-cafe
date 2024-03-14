@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-const Bookmarks = ({ bookmark }) => {
+const Bookmarks = ({ bookmark, readTime }) => {
   return (
     <div className="w-full md:w-1/3">
       <div className="w-full bg-indigo-600 bg-opacity-10 rounded-lg border border-indigo-600 mb-6">
         <h2 className="text-indigo-600 text-xl lg:text-2xl font-bold  py-5 text-center">
-          Spent time on read : 177 min
+          Spent time on read : {readTime} min
         </h2>
       </div>
       <div className="w-full bg-neutral-900 bg-opacity-5 rounded-lg p-4 lg:p-7">
@@ -26,5 +26,6 @@ const Bookmarks = ({ bookmark }) => {
 
 Bookmarks.propTypes = {
   bookmark: PropTypes.array,
+  readTime: PropTypes.number,
 };
 export default Bookmarks;

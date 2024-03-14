@@ -6,20 +6,25 @@ import { useState } from 'react';
 
 function App() {
   const [bookmark, setBookmark] = useState([]);
+  const [readTime, setReadTime] = useState(0);
 
   const handleBookmark = (dta) => {
     setBookmark([...bookmark, dta]);
   };
-  // console.log(bookmark);
+  const readTimeCall = (dta) => {
+    const totalTime = readTime + dta;
+    setReadTime(totalTime);
+  };
+  // console.log(readTime);
   return (
     <>
       <div className="fontFam w-11/12 mx-auto">
         <Header />
         <main className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 ">
           {/* left part Blog  */}
-          <Blogs handleBookmark={handleBookmark} />
+          <Blogs handleBookmark={handleBookmark} readTime={readTimeCall} />
           {/* right part  Bookmark */}
-          <Bookmarks bookmark={bookmark} />
+          <Bookmarks bookmark={bookmark} readTime={readTime} />
         </main>
       </div>
     </>
