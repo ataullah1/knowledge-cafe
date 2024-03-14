@@ -38,7 +38,7 @@ const Blog = ({ blog }) => {
       </div>
       <div>
         <h1 className=" text-neutral-900 text-2xl sm:text-3xl lg:text-[40px] font-bold py-2 md:leading-10 lg:leading-[64px]">
-          How to get your first job as a self-taught programmer
+          {title}
         </h1>
         <p className="text-neutral-900 text-opacity-60 text-lg md:text-xl font-medium  leading-loose">
           {hashtags.map((has, idx) => (
