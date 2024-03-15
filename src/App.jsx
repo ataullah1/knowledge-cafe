@@ -11,9 +11,12 @@ function App() {
   const handleBookmark = (dta) => {
     setBookmark([...bookmark, dta]);
   };
-  const readTimeCall = (dta) => {
+  const readTimeCall = (dta, title) => {
     const totalTime = readTime + dta;
     setReadTime(totalTime);
+    console.log('Remove dta =', title);
+    const removeBookMark = bookmark.filter((bookmark) => bookmark !== title);
+    setBookmark(removeBookMark);
   };
   // console.log(readTime);
   return (

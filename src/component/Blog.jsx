@@ -53,7 +53,7 @@ const Blog = ({ blog, handleBookmark, readTime }) => {
         </p>
 
         <a
-          onClick={() => readTime(reading_time)}
+          onClick={() => readTime(reading_time, title)}
           className="cursor-pointer text-indigo-600 text-lg md:text-xl font-semibold  underline"
         >
           Mark as read
