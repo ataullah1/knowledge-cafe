@@ -14,7 +14,7 @@ function App() {
   const readTimeCall = (dta, title) => {
     const totalTime = readTime + dta;
     setReadTime(totalTime);
-    console.log('Remove dta =', title);
+    // console.log('Remove dta =', title);
     const removeBookMark = bookmark.filter((bookmark) => bookmark !== title);
     setBookmark(removeBookMark);
   };
