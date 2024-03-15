@@ -30,6 +30,15 @@ function App() {
           <Bookmarks bookmark={bookmark} readTime={readTime} />
         </main>
       </div>
+      <p className="pt-9 pb-7 bg-slate-800 text-center text-white italic">
+        Coded by{' '}
+        <a
+          href="https://www.linkedin.com/in/md-ataullah/"
+          className="font-semibold text-pink-500"
+        >
+          Md Ataullah
+        </a>
+      </p>
     </>
   );
 }
